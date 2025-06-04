@@ -1,0 +1,70 @@
+.doc-container{
+
+    display: flex;
+    align-items: center;
+    margin-bottom : 2em;
+}
+
+.doc-container hr {
+    height: 9vw;
+    margin-right: 4vw;
+    margin-left: 4vw;
+}
+
+div.doc-image{
+	width : 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.doc-content{
+    width: 30vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+.doc-content-right{
+    width: 30vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+img.doc-image{
+    height : 10vw
+}
+
+.pdf-button{
+    background : none;
+    color: black;
+    border-right : 1px #45cf64 solid;
+    border-top : 1px #45cf64 solid;
+    border-left : 3px #45cf64 solid;
+    border-bottom : 3px #45cf64 solid;
+    margin-right: 2vw;
+}
+.pdf-button:hover{
+    background-color: #94fbaa;
+}
+.pdf-button a{
+    color: black;
+    text-decoration: none;
+}
+
+
+.ppt-button{
+    background : none;
+    color: black;
+    border-right : 1px #2d4660 solid;
+    border-top : 1px #2d4660 solid;
+    border-left : 3px #2d4660 solid;
+    border-bottom : 3px #2d4660 solid;
+}
+.ppt-button:hover{
+    background-color: #7c94ef;
+    color: white;
+}
+.ppt-button a{
+    color: black;
+    text-decoration: none;
+}
+.ppt-button:hover a{
+    color: white;
+}

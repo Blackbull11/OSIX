@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.tab-container {
+    display: flex;
+    background-color: #efefef;
+    border-bottom: 2px solid #ccc;
+}
+.tab {
+    background-color: #838a96;
+    padding: 10px 20px;
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+}
+.tab.active {
+    background-color: #fdfdfd;
+    border: 2px solid #ccc;
+    border-bottom: none;
+}
+.tab-content {
+    display: none;
+    padding: 2vw;
+    border: 2px solid #ccc;
+}
+.tab-content.active {
+    display: block;
+}
+
+
+.submenu-container {
+ padding : 40px 2vw 0;
+    background-color: #efefef;
+}
+
+.submenu {
+    display: none;
+}
+.submenu.active {
+    display: flex;
+}
+.submenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.submenu ul li a {
+    text-decoration: none;
+    color: #3a475b;
+}
+
+.submenu-tab {
+    background-color: #838a96;
+    padding: 5px 15px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.submenu-tab.active {
+    background-color: #fdfdfd;
+    border: 2px solid #ccc;
+}
+.subtab-content {
+    display: none;
+    padding: 20px 2vw;
+    border: 1px solid #ccc;
+    background-color: #efefef;
+}
+.subtab-content.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+.table-container {
+    margin-top: 20px;
+}
+.modify-question {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #efefef;
+}
+.modify-question:active, .modify-question:focus {
+    background-color: #ffffff;
+    border-color: #586b7c;
+}
+
+.adminTable th{
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center;
+}
+.adminTable tr{
+    background-color: #586b7c;
+    color: #ffffff;
+    font-size: large;
+}
+.adminTable tbody tr td{
+    padding: 0;
+    background-color: #efefef;
+    color : black;
+}
+.adminTable tbody tr td input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #efefef;
+}
+.adminTable{
+    width : 100%;
+}
+
+.row-modified td {
+    background: #ffcccc !important; /* Change la couleur de fond */
+    transition: background-color 0.3s ease; /* Transition pour une animation douce */
+}

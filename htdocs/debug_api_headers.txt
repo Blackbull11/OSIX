@@ -1,0 +1,16 @@
+Array
+(
+    [Host] => localhost
+    [User-Agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0
+    [Accept] => */*
+    [Accept-Language] => fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3
+    [Accept-Encoding] => gzip, deflate, br, zstd
+    [Content-Type] => multipart/form-data; boundary=----geckoformboundary6ff681a25e8598c2fb4d6cc150886856
+    [Content-Length] => 172
+    [Origin] => moz-extension://46bf5e37-c23c-4180-b6be-8192727b2bac
+    [Connection] => keep-alive
+    [Cookie] => Phpstorm-80a31c84=d959b60a-59c2-464a-922a-608c87648408; PHPSESSID=0khv87o5ctp4lt5udt27r5lo8c
+    [Sec-Fetch-Dest] => empty
+    [Sec-Fetch-Mode] => cors
+    [Sec-Fetch-Site] => same-origin
+)

@@ -1,0 +1,155 @@
+/*______________________________________________________________*/
+/*<!--style relatif à header-->*/
+
+header {
+    display: flex;
+    align-items: center;
+    padding-top: 5vh;
+    justify-content: space-between;
+    background: linear-gradient(#0E2841, rgba(0, 8, 28, 0) 90%);
+    padding: 4vh 5% 8vh;
+    width: 100%
+}
+.left-header a{
+    text-decoration: none;
+    margin-right: 2vw;
+}
+.right-header a {
+    position: relative;
+    font-family: 'Courier New';
+    font-size: 1.8vw;
+    margin-left: 1vw;
+    color: #FFFFFF;
+    text-decoration-thickness: 1px
+}
+
+header a:hover {
+    font-weight: 800;
+    font-style: italic;
+    text-decoration-thickness: 2px
+}
+
+.logo {
+    height: 4.42vw;
+    width: 12.5vw;
+}
+.header-hr{
+    height: 4.42vw;
+    margin-right: 2vw;
+}
+
+
+#log-button {
+    font-family: 'Courier New';
+    justify-self: center;
+    background: None;
+    font-size: 1.7vw;
+    border-right: none;
+    border-top: none;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+#log-button:hover {
+    box-shadow: 2px -2px 2px rgba(0, 0, 0, 0.4) inset;
+    font-style: italic;
+    background: #c5cfd5;
+    border: none;
+}
+
+/*______________________________________________________________*/
+/*<!--style des infobulles-->*/
+
+a span {
+    display: none;
+    border-radius: 0;
+    position: absolute;
+    top: 1.7vw;
+    padding: 0.4em;
+    background: rgb(52, 67, 87, 0.8);
+    width: max-content;
+    font-size: 1vw;
+    border-radius: 3px;
+    margin-left: 1.3vw;
+    font-weight: normal;
+}
+
+a:hover span {
+    display: ruby
+}
+
+
+
+/*Style du bouton de connexion à la session*/
+
+.dropdown{ display: inline-block;
+    padding: 0.5vw 0;
+    margin-left: 2vw;
+    width: 13vw;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.dropdown:hover .dropdown-father{
+    background-color: rgb(66, 76, 93);
+}
+.dropdown-father {
+    justify-self: center;
+    padding-top: 0.7vw;
+    display: grid;}
+.dropdown-father button{
+    justify-self: center;
+}
+.dropdown-child {
+    display: none;
+    position: absolute;
+    padding: 0.8vw 0;
+    width: 13vw;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.dropdown-child a, .dropdown-child button {
+    justify-self: center ;
+    border : none;
+    font-size: 1.2vw;
+    color: white;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    background-color: transparent;
+    font-family: 'Courier New';
+    margin: 0.7vw 0;
+}
+#log_off_button{
+    color: #ff8787;
+    font-weight: 800;
+}
+#log_off_button:hover{
+    font-style: italic;
+    font-weight: 1000;
+}
+.dropdown:hover .dropdown-child {
+    display: grid;
+    background : linear-gradient(to bottom, rgb(66, 76, 93), 50%, rgba(66,76, 93, 0.7));}
+
+.dropdown:hover{
+    background: rgb(66, 76, 93);
+}
+
+.notification-badge {
+    margin: 0;
+    display: inline;
+    background-color: #ff7878;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 0.2em 0.5em;
+    position: relative;
+    height: fit-content;
+    top: -8px;
+    left: -8px;
+    align-content: center;
+}

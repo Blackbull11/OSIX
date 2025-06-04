@@ -1,0 +1,4 @@
+Array
+(
+    [key] => get_user
+)

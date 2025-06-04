@@ -1,0 +1,35 @@
+footer {
+    margin-top: 2em;
+    display: grid;
+    align-items: center;
+    padding-top: 5vh;
+    justify-items: center;
+    background: linear-gradient(rgba(0, 8, 28, 0) 10%, #0E2841);
+    padding: 2vw;
+    width: 100%
+}
+
+.footer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em 0.5em 0.5em;
+    border-bottom: 1px solid black;
+}
+    .footer-buttons button:hover {
+        font-style: italic;
+        text-decoration: solid 1px;
+    }
+
+.footer-copyright {
+    margin-top : 1em;
+    color: #d3e0e5;
+    display: block;
+    text-align: center;
+}
+.footer-copyright p {
+    margin: 0.6em;
+    font-size: 13px;
+    font-weight: lighter ;
+    font-family: 'Courier New';
+}

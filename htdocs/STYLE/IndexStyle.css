@@ -1,0 +1,668 @@
+/*style générique*/
+html, body {    margin: 0;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    background: rgba(213,226,231, 1);
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;  }
+
+* {             box-sizing: inherit; /* Assure que le modèle de boîte est uniforme */   }
+
+h1, h2, h3 {    margin: 20px 0;
+    font-family: monospace;
+    font-weight: 500            }
+
+h3{             font-size: 20px             }
+
+button {        background: none;
+                border:none;
+                padding: 10px;
+                font-size: 14px;
+                border-radius: 4px;
+                cursor: pointer;             }
+
+button:focus {   border-color: #c5cfd5   }
+
+ul {        list-style-type: none;
+    padding: 0           }
+
+li {        list-style-type: none;
+    margin-bottom: 5px   }
+
+/*______________________________________________________________*/
+/*<!--style contenu principal-->*/
+
+.content {
+    padding: 1% 4%; /*paramètres padding si 2 valeurs : haut&bas | côtés */
+    display: flex
+}
+
+.MAIN {
+    width: 33%;
+    padding: 1em
+}
+
+.MAIN hr {
+    margin: 0 0 2em;  /*paramètres margin si 3 valeurs : haut | côtés | bas*/
+}
+
+.main-div-header {
+    text-align: center;
+    height: 5em;
+}
+
+.main-div-title {
+    font-family: monospace;
+    font-size: 25px
+}
+
+.main-div-subtitle {
+    font-size: 18px;
+    text-align: justify;
+}
+
+
+
+/*______________________________________________________________*/
+/*<!--style des galleries-->*/
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-row-gap: 1em;
+    grid-column-gap: 5%;
+    width: 90%
+}
+
+.gallery a {
+    aspect-ratio: 1;
+    overflow: hidden
+}
+
+.gallery a:hover {
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 50))
+}
+
+.fav-icon {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius : 10px;
+}
+
+
+/*______________________________________________________________*/
+/*<!--style des contenus déroulants (outils ou sources)*/
+.collapsible-content  {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.collapsible-content-box, .collapsible-content-source  {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.collapsible-content-source {
+    display: none;
+    max-height: unset;
+    padding: 20px;
+    background-color: rgba(14, 40, 65, 0.15);
+}
+
+.collapsible-title{
+    margin-bottom: 0.5em;
+    font-family: monospace;
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.collapsible-content ul, .collapsible-content-box ul    {list-style-type:none;
+    padding: 0;
+    margin: 1em 0 0}
+
+.collapsible-content li    {padding-left: 16px;
+    margin-bottom: 0.75em   }
+
+.collapsible-content li::before{content: "\0025A1";
+    padding-right: 8px  }
+
+.collapsible-content a, .collapsible-content-box a     {font-style: italic;
+    color: rgb(31,74,161)   }
+
+
+.collapsible-matrix hr     {margin: 3%;
+    padding: 0}
+
+/*______________________________________________________________*/
+/*<!--style new button-->*/
+/*Pour un bouton avec un contenu plus général qu'une image, l'appliquer au début de la balise button.*/
+button.new-button      {border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    display: inline-flex;
+    align-items: center;
+    filter: grayscale(0.8) opacity(0.6);
+    font-weight: bold}
+
+button.new-button:hover      {text-shadow: 1px 1px 4px black ;
+    filter: grayscale(0.5) drop-shadow(0.5em 0.5em 4px rgba(150,150,150,30))}
+button.new-button img {
+    height: 1.5vw;
+    margin-right: 0.5em
+}
+
+button.new-button-smaller      {border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    display: inline-flex;
+    align-items: center;
+    filter: grayscale(0.8) opacity(0.6);
+    font-weight: bold;
+    font-size: smaller;
+}
+
+button.new-button-smaller:hover      {text-shadow: 1px 1px 4px black ;
+    filter: grayscale(0.5) drop-shadow(0.5em 0.5em 4px rgba(150,150,150,30))}
+button.new-button-smaller img {
+    height: 1vw;
+    margin-right: 0.5em
+}
+
+
+
+/*Pour un bouton sans contenu autre qu'une image, l'appliquer à la balise img du bouton.*/
+img.new-button-img {       filter: grayscale(0.8) opacity(0.6);
+    width:100%;
+    }
+
+img.new-button-img:hover {filter: grayscale(0.5) drop-shadow(0.5em 0.5em 4px rgba(150,150,150,30))}
+
+img.new-button-img {
+    z-index: 0;
+}
+
+
+/*Style des boutons de modification*/
+.edit-icon {
+    padding : 0;
+    margin-left: 0.7vw;
+}
+.edit-icon img {height: 0.8vw; width: 0.8vw;}
+
+
+
+/*Des extensions à ajouter : */
+.collapsible {font-style : italic}
+
+.collapsible:after, .collapsible-box:after, .collapsible-source:after  {content: '\00003E'}
+
+.collapsible-active:after {content : '\002335'}
+
+.collapsible-box-active:after {
+    content: '\002335';
+}
+.collapsible-box-active {
+    margin-bottom: 20px;
+}
+
+.sub-button:after {font-size: 10px;}
+
+.sub-button{padding : 5px 7px;
+    margin: 0.5em 0;
+    margin-right: 0.5em;
+    border-color : #000;
+    border-right: 1px solid white;
+    border-left: none;}
+.sub-button.collapsible-active {margin : 0}
+
+.new-icon img{
+    filter: grayscale(0.8) opacity(0.6);
+    height: 1.5vw;
+}
+
+button.small-button{
+     border: none;
+     font-size: 10px;
+ }
+img.small-button{
+    height: 1vw !important;
+    margin-left: 5px;
+}
+/*______________________________________________________________*/
+/*<!--style des médias-->*/
+
+@media (max-width: 1028px) {
+    .main-div-subtitle {
+        display: none
+    }
+    .main-div-header{
+        height: 3em;
+    }
+}
+
+
+.delete-icon{
+    width : 1vw;
+}
+
+.delete-anchor {
+    position: relative;
+    top: -3vw;
+    right: -1.9vw;
+    display: none;
+}
+
+.tool-fav-div:hover .delete-anchor {
+    display: inline;
+}
+
+/*Style pour mettre le placeholder en rouge lorsqu'il y a une erreur dans un input'*/
+.red::placeholder {
+    color: red;
+}
+.red {
+    border: 2px solid red;
+    background-color: #ffeeee;
+}
+
+
+/*Style pour le bandereau d'avertissement de la démo'*/
+#demo-message{
+    background-color: #455265ba;
+    align-content: center;
+    height: 4em;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-family: math;
+}
+#demo-message a{
+    color: red;
+}
+
+/*Style pour le bandereau d'avertissement de la démo'*/
+#alert-message{
+    align-content: center;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-family: math;
+    margin-bottom: 15px;
+}
+
+
+#Uncat_sources li::before{
+    content : ">";
+    padding-right: 12px ;
+}
+
+/*Bouton d'ouverture des liens d'une liste */
+.icon-button {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.icon-button img {
+    width: 20px;       /* Taille de l'icône */
+    height: 20px;
+    filter: brightness(0.6);
+    transition: filter 0.3s;
+}
+
+.icon-button:hover img {
+    filter: brightness(1); /* Brillance au survol */
+}
+
+
+.source-item {
+    display: flex;
+    gap : 10px;
+    align-items: center;
+}
+
+
+.sub-box-button {
+    padding: 5px 7px !important;
+    border: none !important;
+}
+.sub-box-button.collapsible-box-active{
+    margin : 0 !important;
+}
+
+
+#suggested_tags_source_content_bis {
+    display: flex; /* Assurez-vous d'un layout horizontal si nécessaire */
+    overflow-x: hidden; /* Active le défilement horizontal */
+    white-space: nowrap; /* Préserve l'affichage en ligne des éléments enfants (si applicable) */
+    max-width: 100%; /* Limite la largeur visible */
+}
+
+.status-pill {
+    display: inline-block;
+    width: 12px;          /* Taille de la pastille */
+    height: 12px;
+    border-radius: 0;   /* Forme circulaire */
+    margin-right: 5px;    /* Espacement pour lisibilité */
+    vertical-align: middle;
+    color: #d58787;
+}
+
+.star.full {
+    color: #fdd927;
+    -webkit-text-stroke: 0.4px black;
+}
+.star-big.full {
+    color: #fdd927;
+    -webkit-text-stroke: 0.4px black;
+}
+.star-big{
+    font-size: x-large;
+    cursor: pointer;
+}
+
+
+.source-item.dragged {
+    opacity: 0.5;
+    border: 2px dashed #009688;
+}
+
+.move-up-button, .move-down-button {
+    color: #007bff;
+    font-weight: bold;
+    border: none;
+    padding: 0 2px;
+    cursor: pointer;
+}
+.move-up-button{
+    margin-left : 5px;
+}
+.move-down-button{
+    margin-right : 5px;
+}
+
+.move-up-button:disabled, .move-down-button:disabled {
+    color: #cccccc;
+    cursor: not-allowed;
+}
+
+
+.collapsible-block{
+    max-height: max-content;
+}
+
+.ask-for-cotation {
+    border-radius: 7px;
+    display: none;
+    padding: 10px;
+    background-color: rgba(95, 158, 160, 0.25);
+}
+
+.collapsible-content-source input {
+    margin-bottom: 15px;
+    border-radius: 7px;
+    padding: 4px;
+    border-top: none;
+    border-right: none;
+}
+.collapsible-content-source textarea {
+    margin-bottom: 15px;
+    resize: vertical;
+    width: 24vw;
+    border-radius: 7px;
+    height: 80px;
+    padding: 5px;
+    border-top: none;
+    border-right: none;
+}
+.collapsible-content-source textarea:active{
+
+}
+#send-buttons {
+    display: flex;
+    justify-content: right;
+    padding-right: 25px;
+    gap: 25px;
+}
+.send-button {
+    padding : 5px;
+    border-left: 1px solid #4290fb;
+    border-bottom: 1px solid #4290fb;
+}
+.cancel-send-button {
+    padding : 5px;
+    border-bottom: 1px solid #fd543f;
+    border-left: 1px solid #fd543f;
+}
+
+.link-fav-div:hover .delete-anchor {
+    display: inline;
+}
+
+.source-relatives-list{
+    list-style-type : square !important;
+    margin: 1em 0 2em 20px !important ;
+}
+.source-relatives-list li{
+    list-style-type : square !important;
+}
+
+
+.log-button {
+    height: fit-content;
+    border-color: #0c64d8 !important;
+    border-width: medium !important;
+    color: #0c64d8;
+}
+.log-button:hover {
+    text-shadow: 1px 1px 4px rgba(78, 148, 255, 0.85);
+}
+
+.log-input {
+    padding : 5px;
+    border-radius: 10px;
+    color: #092f64;
+    background-color: #ffffff;
+    border-left: 1px solid rgba(90, 126, 162, 0.84);
+    border-bottom: 1px solid rgba(90, 126, 162, 0.84);
+    border-right: none;
+    border-top: none;
+}
+
+
+.bordered{
+    border-left: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    margin-left : 50px;
+}
+
+/* Styles de la popup de liens */
+.custom-link-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Fond transparent sombre */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Assurez-vous que la link-popup soit au premier plan */
+}
+
+.link-popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    min-width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.link-popup-content h1 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.link-popup-links {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.link-popup-links a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 1em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.link-popup-links a:hover {
+    text-decoration: underline;
+}
+
+/* Bouton de fermeture */
+.link-popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #ff4d4f;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+.link-popup-close:hover {
+    background: #ff7875;
+}
+
+.link-popup-content h2 {
+    color: #0E2841;
+    margin-bottom: 2em;
+    font-size: 2em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 1.5em;
+}
+
+.grayscaled {
+    filter: grayscale(1);
+}
+.grayscaled:hover{
+    filter: grayscale(50%);
+}
+.glorix-button-div{
+    float: right;
+    margin-right: 25px;
+}
+.squared-before:before {
+    content: '>';
+    margin-right : 10px;
+}
+
+.stats-container{
+    padding : 5vw;
+    font-family: 'Courier New', Courier, monospace;
+}
+.stats-container ul li {
+    font-size: 1em;
+    margin-bottom: 1em;
+
+}
+/* Styles de la modale */
+.modal {
+    display: none; /* Par défaut, la modale est masquée */
+    position: fixed;
+    z-index: 1000; /* S'assurer qu'elle est au-dessus des autres éléments */
+    left: 0;
+    top: 0;
+    width: 100%; /* Prend toute la largeur de l'écran */
+    height: 100%; /* Prend toute la hauteur de l'écran */
+    overflow: auto; /* Ajoute un scroll si le contenu est trop grand */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+}
+
+/* Contenu de la modale */
+.modal-dialog {
+    position: relative;
+    margin: 10% auto; /* Centrer horizontalement et ajouter un espacement vertical */
+    padding: 20px;
+    background: #fff; /* Fond blanc */
+    border-radius: 8px; /* Angles arrondis */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Ombre légère */
+    width: 80%; /* Largeur par défaut */
+    max-width: 500px; /* Largeur maximum pour écrans larges */
+    font-family: Arial, sans-serif; /* Police */
+}
+
+/* Bouton de fermeture */
+.modal .close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* Boutons en bas de la modale */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end; /* Aligner les boutons à droite */
+    gap: 10px;
+}
+
+/* Boutons */
+.modal-footer .btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #ddd;
+}
+
+.modal-footer .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #0056b3;
+}
+.news-content-button{
+    background-color: rgba(255, 152, 152, 0.62);
+
+}
+
+.unbordered-modern{
+    border: none;
+    padding : 4px;
+    border-radius: 6px;
+    background-color: #efefef;
+}

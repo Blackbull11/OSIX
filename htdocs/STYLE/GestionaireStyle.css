@@ -1,0 +1,318 @@
+.GEST {
+    padding : 0 0 1em 2vw;
+}
+
+
+.gest-div-header {
+    text-align: left;
+    padding: 2em 0;
+}
+
+.gest-div-title {
+    font-family: monospace;
+    font-size: 25px
+}
+
+.gest-div-subtitle {
+    font-size: 18px;
+    text-align: justify;
+}
+
+.gest-gallery {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-row-gap: 1em;
+    grid-column-gap: 5%;
+    width: 90%;
+}
+
+.tab-buttons {
+    display: flex;
+    background-color: #efefef;
+    padding: 20px 2vw 0;
+    border-bottom: 2px solid #ccc;
+}
+
+.tab-button {
+    background-color: #838a96;
+    padding: 10px 20px;
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+}
+
+.tab-button.active {
+    background-color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.tab-contents .tab-content {
+    display: none;
+    padding: 20px 2vw;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.tab-contents .tab-content.active-content {
+    display: block;
+}
+
+.search-filters {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10em;
+    margin-bottom: 20px;
+}
+
+
+.search-results table, .search-tags table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.search-results th, .search-results td, .search-tags th, .search-tags td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+td.image_column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+td.url-column a{
+    color : #434ca8;
+}
+.gest-active-tag{
+    padding: 2px 0;
+    margin-right: 5px;
+    color: rgb(67, 76, 168);
+    border-radius: 0;
+}
+.gest-active-tag:hover{
+    background: rgba(91, 98, 170, 0.30);
+    padding: 2px 5px;
+}
+.gest-active-tag:hover::after{
+    content: " x";
+}
+
+/* Enlever les bordures de toute la table */
+#results-table th, #tags-table th, #results-table td, #results-table, #tags-table {
+    border: none;
+}
+
+/* Ligne d'en-tête */
+#results-table thead tr, #tags-table thead tr {
+    background-color: rgba(49, 72, 94, 0.8);
+    color: white; /* Rendre le texte lisible sur fond rouge */
+    font-weight: bold; /* Optionnel, pour faire ressortir le titre */
+}
+
+
+
+/* Alternance des couleurs des lignes du tableau (tbody) */
+#results-table tbody tr:nth-child(odd), #tags-table tbody tr:nth-child(odd) {
+    background-color: rgba(211, 224, 229, 0.62);
+}
+
+#results-table tbody tr:nth-child(even), #tags-table tbody tr:nth-child(even) {
+    background-color: rgba(211, 224, 229, 0.34);
+}
+
+
+/* Pour la barre de défilement dans gestionnaire glorix et tags*/
+#tags-table-container {
+    max-height: 400px; /* Définissez la hauteur maximale souhaitée */
+    overflow: auto; /* Activez le défilement vertical */
+    border: 1px solid #ccc; /* Ajoutez une bordure pour une meilleure visibilité */
+}
+#tags-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+#tags-table th, #tags-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.gest-success-message {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    background-color: #36ad54;
+    color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    z-index: 1000;
+    transition: opacity 1s ease;
+}
+
+.selected-tag {
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(91, 98, 170, 0.3);
+    border: none;
+    color: #0E2841;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.selected-tag:hover {
+    background-color: rgba(91, 98, 170, 0.6);
+}
+
+.tag-div {
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(200, 200, 200, 0.3);
+    border: none;
+    color: #333;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.tag-div:hover {
+    background-color: rgba(200, 200, 200, 0.6);
+}
+
+
+
+.clear-button {
+    background: none;
+    border: none;
+    color: crimson;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.clear-button:hover {
+    color: red;
+}
+
+
+.hidden {
+    display: none;
+}
+
+#search-bar {
+    border-radius: 50px;
+    height: 15px;
+    font-size: 15px;
+    padding: 20px;
+    background-color: rgb(88, 107, 124);
+    color: #bfbfbf;
+    border: none;
+    width: 40%;
+    padding-left: 30px
+
+}
+#search-bar::placeholder {
+    color: #bfbfbf;
+}
+
+.add-tag-button:hover{
+    background: linear-gradient(45deg, #586b7c, #e0e8eb);
+    color: #ffffff;
+}
+.add-tag-button{
+    padding : 5px;
+}
+
+.gest-popup {
+    display: none;
+    padding: 1em 2em;
+    background-color: #d3e0e5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+}
+.gest-popup hr{
+    margin-bottom : 1em;
+    width : 0;
+}
+
+input[type="checkbox"].checkbox-recomended {
+    display: none;
+}
+input[type="checkbox"].checkbox-recomended + label {
+    padding : 10px;
+    background-color: transparent;
+}
+input[type="checkbox"].checkbox-recomended:checked + label {
+    background-color: rgba(253, 218, 70, 0.55);
+}
+input[type="checkbox"].checkbox-mine {
+     display: none;
+ }
+input[type="checkbox"].checkbox-mine + label {
+    padding : 10px;
+    background-color: transparent;
+}
+input[type="checkbox"].checkbox-mine:checked + label {
+    background-color: rgba(86, 152, 33, 0.58);
+}
+input[type="checkbox"].checkbox-hidden {
+    display: none;
+}
+input[type="checkbox"].checkbox-hidden + label {
+    padding : 10px;
+    background-color: transparent;
+}
+input[type="checkbox"].checkbox-hidden:checked + label {
+    background-color: rgba(51, 135, 253, 0.59);
+}
+
+.unactive-tool:before {
+    content: "x" !important;
+    color: red;
+}
+
+#categories-container {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.category-block h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.tag-btn {
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.tag-btn.selected-tag {
+    font-weight: bold;
+    color: #FFF;
+    background-color: #007BFF; /* Bleu pour tag sélectionné */
+}
+
+.extentToolDivButton {
+    background-color: rgb(131 138 150 / 80%);
+    color: white;
+    font-size: 12px;
+    border-radius: 1000px;
+    height: min-content;
+    padding: 3px 6px;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

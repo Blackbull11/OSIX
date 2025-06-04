@@ -1,0 +1,785 @@
+/*style générique*/
+html, body {    margin: 0;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    background: rgba(213,226,231, 1);
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif    }
+
+* { box-sizing: inherit; /* Assure que le modèle de boîte est uniforme */ }
+
+h1, h2, h3 {    margin: 0.5em 0;
+    font-family: monospace;
+    font-weight: 500            }
+
+button {        background: none;
+                border:none;
+                font-size: 14px;
+                border-radius: 4px;
+                cursor: pointer             }
+
+button:focus {  border-color: #c5cfd5;  }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 5px;
+}
+
+/*Style de l'en-tête du projet*/
+
+/*.page-title{*/
+/*    margin: 0 auto;*/
+/*    padding: 0em 5% 0;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*}*/
+/*.page-title-text-and-date{*/
+/*    align-content: center;*/
+/*}*/
+/*.page-title-text{*/
+/*    display: flex;*/
+/*    align-content: center;*/
+/*    justify-content: center;*/
+/*    padding : 2em 0 0;*/
+/*    width : 100%;*/
+/*    height : 100%;*/
+/*    flex-direction: column;*/
+/*}*/
+/*#projectTitle{*/
+/*    align-items: center;*/
+/*    text-align: center;*/
+/*    color: #0E2841;*/
+/*    font-size: 30px;*/
+/*    text-transform : uppercase;*/
+/*}*/
+
+textarea {
+    margin: 0;
+    padding : 10px;
+    height: 80%;
+    width: 100%;
+    font-size: 17px;
+    text-align: justify;
+    background-color: #fff;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+    resize : none;
+}
+
+/*#comments{*/
+/*    width: 30%;*/
+/*    height:100%;*/
+/*    justify-content: center*/
+/*}*/
+/*#comments-title{*/
+/*    justify-items: center;*/
+/*    font-size: 18px;*/
+/*    padding: 0 0 1em;*/
+/*}*/
+/*#comments-box {*/
+/*    width: 100%;*/
+/*}*/
+
+
+#cursor-icon {
+    position: fixed; /* Permet de suivre les déplacements du curseur */
+    pointer-events: none; /* Empêche l’icône de bloquer les interactions utilisateur */
+    z-index: 10000; /* S'assure qu'elle est au premier plan */
+}
+
+
+
+
+
+
+
+/* Bandeau Global */
+#page-title {
+    display: flex;
+    flex-direction: row; /* Répartition horizontale des divisions principales */
+    align-items: center;
+    justify-content: space-between; /* Espaces réguliers entre les divisions */
+    background-color: #f4f4f4; /* Couleur légère pour contraste */
+    border-bottom: 2px solid #ccc; /* Ligne séparatrice basse */
+    height: 15vh; /* Hauteur définie dans le HTML */
+    padding: 0 2%; /* Marge intérieure gauche/droite */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Ombre discrète pour effet */
+}
+
+.page-title-text {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 1em 0 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+/* Division #1 : Conteneur des logos */
+#logo-container {
+    display: flex;
+    flex-direction: row; /* Logos alignés horizontalement */
+    align-items: center;
+    gap: 1em; /* Espacement entre logos */
+}
+
+#logo-container img {
+    height: 60px; /* Taille fixe des logos */
+    width: auto;
+    transition: transform 0.3s ease; /* Animation légère au survol */
+}
+
+#logo-container img:hover {
+    transform: scale(1.1); /* Agrandissement au survol */
+    cursor: pointer;
+}
+
+.edit-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-button img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.edit-button img:hover {
+    opacity: 1;
+}
+
+/* Division #2 : Titre et dernière modification */
+.page-title-text-and-date {
+    display: flex;
+    flex-direction: column; /* Organise titre et date en colonne */
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em; /* Espacement entre le titre et la date */
+    color: #333; /* Texte sombre */
+    font-family: Arial, sans-serif;
+}
+
+#projectTitle {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+    margin: 0;
+}
+
+#last_use_time {
+    font-size: 0.9em;
+    color: #666; /* Couleur secondaire pour le texte */
+}
+
+/* Division #3 : Zone des commentaires */
+#comments {
+    display: flex;
+    width: 25%; /* Largeur fixe, ajustable */
+    align-items: center;
+    justify-content: center;
+}
+
+#comments-box {
+    width: 90%; /* S'adapte à la division */
+    height: 50px; /* Taille définie pour les commentaires */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
+    resize: none; /* Empêche le redimensionnement */
+    background-color: #fdfdfd; /* Fond blanc léger */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Ombre intérieure subtile */
+}
+
+#comments-box:focus {
+    outline: none;
+    border-color: #007ced; /* Couleur bleu clair au focus */
+    box-shadow: 0 0 8px rgba(0, 124, 233, 0.3);
+}
+
+.new-button {
+    margin-top: 0.5em;
+    padding: 0.5em 1em;
+    background-color: #007ced; /* Couleur bleu pour le bouton */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new-button:hover {
+    background-color: #005bb5; /* Bleu foncé au survol */
+}
+
+/* Boîte de dialogue */
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond sombre semi-transparent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    max-width: 90%; /* S'adapte sur petit écran */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ombre 3D */
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.dialog h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.dialog input[type="text"] {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.dialog button {
+    background-color: #007ced;
+    color: white;
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dialog button:hover {
+    background-color: #005bb5;
+}
+
+
+
+
+
+
+
+/*Style de la barre de paramètres*/
+.parameters-bar {
+    width: 5%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+
+
+.canvas-container {
+    display: flex; /* Définit le conteneur comme un parent flex */
+    justify-content: center; /* Centre horizontalement le contenu enfant */
+    /*align-items: center; *//* Centre verticalement le contenu enfant */
+    position: relative; /* Nécessaire pour les éléments en "absolute" si applicable */
+    width: 68%; /* Permet d'utiliser toute la zone disponible */
+    /*height: 100%; Permet d'utiliser toute la zone disponible */
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+
+canvas {
+    display: block;
+    background-color: rgba(213,226,231, 0.5);
+    border: 1px solid black;
+    border-radius: 4px;
+    transform-origin: 0 0;
+}
+
+#tooltip {position: absolute;
+        display: none;
+        background: rgba(50, 50, 50, 0.9); /* Fond semi-transparent pour subtile modernité */
+        border: none; /* Retirer la bordure brute */
+        border-radius: 8px; /* Ajout d'arrondi pour plus de douceur */
+        padding: 10px; /* Plus de confort pour l'espace intérieur */
+        font-size: 14px; /* Taille de texte standard et confortable */
+        line-height: 1.5; /* Meilleure lisibilité avec un interligne suffisant */
+        color: white; /* Couleur du texte pour un bon contraste avec le fond */
+        max-width: 300px; /* Garde une dimension modérée */
+        z-index: 1000; /* Priorité visuelle */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Ombre subtile pour détacher visuellement */
+        word-wrap: break-word; /* Adaptation du texte en cas de contenu long */
+        white-space: normal; /* Retour à la ligne naturel si nécessaire */
+        text-align: left; /* Texte aligné à gauche pour une lecture intuitive */
+        pointer-events: none; /* Empêche l'interaction avec la souris (bon comportement pour un tooltip) */}
+
+
+.edit-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.edit-button img {
+    height: 20px;
+    margin : 0;
+}
+
+#closeButton {
+    position: absolute;
+    top: 10px; /* Décalé de 10px du haut */
+    right: 10px; /* Décalé de 10px de la droite */
+    font-size: 18px; /* Taille de la croix */
+    cursor: pointer; /* Curseur de "doigt" */
+    background-color: rgba(0, 0, 0, 0.7); /* Fond sombre translucide */
+    color: white; /* Couleur du texte (croix) */
+    padding: 5px 8px; /* Espacement autour de la croix */
+    border-radius: 3px; /* Coins arrondis */
+    z-index: 1000; /* Par-dessus l'image */
+    transition: background-color 0.3s ease; /* Animation douce quand survolé */
+}
+
+#closeButton:hover {
+    background-color: rgba(255, 0, 0, 0.5); /* Fond un peu plus sombre au survol */
+}
+
+
+
+
+/*Style de l'onglet de saisie*/
+
+/* Conteneur global pour l'interaction */
+.interactivePanel {
+    font-family: Arial, sans-serif; /* Police moderne et lisible */
+    padding: 20px;
+    background-color: #eceff1; /* Couleur de fond douce (gris clair) */
+    border: 1px solid #b0bec5; /* Bordure grise claire pour contraste */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile pour donner du relief */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Titre principal */
+.interactivePanel h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #37474f; /* Texte sombre (gris bleuté) */
+    text-align: center; /* Centrer le titre */
+    margin-bottom: 15px; /* Espacement en dessous du titre */
+}
+
+/*Titre secondaire*/
+.interactivePanel h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #37474f; /* Texte sombre (gris bleuté) */
+    margin-bottom: 0.5em; /* Espacement en dessous du titre */
+}
+
+/* Paragraphe descriptif (s'il y en a) */
+.interactivePanel p {
+    color: #607d8b;
+    font-size: 14px;
+    margin-bottom: 15px; /* Espacement avec le contenu suivant */
+}
+
+.interactivePanel label {
+    font-weight: bold; /* Met en valeur les labels pour une meilleure clarté */
+    margin-bottom: 5px; /* Espacement cohérent avec les champs de formulaire */
+    display: block; /* Force affichage sur une nouvelle ligne */
+    color: #37474f; /* Gris légèrement sombre */
+}
+
+/* Champs de formulaire */
+.interactivePanel input[type="text"],
+.interactivePanel textarea,
+.interactivePanel select,
+.interactivePanel input[type="file"] {
+    width: 100%; /* Occupation du conteneur */
+    padding: 10px; /* Espacement interne */
+    margin: 10px 0; /* Séparation entre les champs */
+    border: 1px solid #90a4ae; /* Bordure douce */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    font-size: 14px;
+    color: #37474f; /* Texte léger dans le champ */
+    background-color: #ffffff; /* Fond blanc pour contraste */
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05); /* Légère ombre interne */
+}
+
+/* Focus sur les champs */
+.interactivePanel input[type="text"]:focus,
+.interactivePanel textarea:focus,
+.interactivePanel select:focus,
+.interactivePanel input[type="file"]:focus {
+    border-color: #1976d2; /* Bordure bleue par défaut sur le focus */
+    outline: none; /* Supprime les bordures natives */
+    box-shadow: 0px 0px 5px rgba(25, 118, 210, 0.5); /* Lueur bleue */
+    vertical-align: middle;
+}
+
+/* Boutons */
+.interactivePanel button {
+    background-color: #0288d1; /* Bleu principal */
+    color: #ffffff; /* Texte blanc */
+    border: none; /* Pas de bordures visibles */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px 15px; /* Taille spatiale du bouton */
+    font-size: 14px;
+    cursor: pointer; /* Curseur en "doigt" */
+    transition: background-color 0.3s ease; /* Animation douce au survol */
+}
+
+#ajouter button {
+    background-color: #0288d1; /* Bleu principal */
+    color: darkblue; /* Texte blanc */
+    border: none; /* Pas de bordures visibles */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 14px;
+    cursor: pointer; /* Curseur en "doigt" */
+    transition: background-color 0.3s ease; /* Animation douce au survol */
+    width: 19px;
+    height: 19px;
+}
+
+
+/* Survol des boutons */
+.interactivePanel button:hover, #ajouter button:hover {
+    background-color: #01579b; /* Bleu plus sombre */
+}
+
+/* Zones spécifiques */
+.interactivePanel .preview-container {
+    border: 1px solid #b0bec5;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px; /* Espacement au-dessus des prévisualisations */
+    background-color: #ffffff; /* Fond blanc propre */
+    display: flex;
+    flex-direction: column; /* Arrange les éléments en colonne */
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Images dans les conteneurs */
+.interactivePanel .preview-container img {
+    border-radius: 5px;
+    max-width: 150px;
+    max-height: 150px;
+    margin: 10px 0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Légère ombre pour relief */
+}
+
+/* Texte explicatif dans les conteneurs de prévisualisation */
+.interactivePanel .preview-container span {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #37474f; /* Gris sombre */
+}
+
+/* Transition fluide pour interactions */
+.interactivePanel input[type="text"]:focus,
+.interactivePanel textarea:focus,
+.interactivePanel button:hover,
+.interactivePanel select:focus {
+    transition: 0.2s ease-in-out;
+}
+
+.interactivePanel hr {
+    display: block; /* Assurez-vous que l'élément est un bloc */
+    border: none; /* Supprime toute bordure par défaut */
+    border-top: 3px solid gray; /* Ajoutez une bordure supérieure pour recréer une ligne */
+    height: 1px; /* Définit précisément l'épaisseur */
+    width: 100%; /* Assurez-vous que la ligne occupe tout l'espace disponible */
+    margin-top: 1em;
+}
+
+
+
+.export-btn {
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin : 5px;
+}
+
+.export-btn:hover {
+    background-color: #2980b9;
+}
+
+
+
+
+
+
+
+
+
+.tool-title {
+    color: white;
+    font-size: 35px;
+    text-align: right;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1% 1%;
+}
+
+
+.controls {
+    width: 25%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+    height: min-content;
+}
+
+.category-select {
+    width: 100%;
+}
+.Tool-settings{
+    margin-top: 2em
+}
+#removeCategoryContainer{
+    margin-top: 2em;
+}
+.hidden {
+    display: none;
+    margin-bottom: 2em;
+}
+
+
+
+.category-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.edit-category-btn {
+    margin-top: 10px;
+    background-color: #28a745;
+}
+.zoom-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.dialog-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+}
+.dialog {
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+.dialog input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+}
+.dialog button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.dialog button:hover {
+    background-color: #0056b3;
+}
+
+
+
+/*______________________________________________________________*/
+/*<!--style new button-->*/
+/*Pour un bouton avec un contenu plus général qu'une image, l'appliquer au début de la balise button.*/
+button.new-button      {border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 0.5em;
+    display: inline-flex;
+    align-items: center;
+    filter: grayscale(0.8) opacity(0.6);
+    font-weight: bold}
+
+button.new-button:hover      {text-shadow: 1px 1px 4px black ;
+    filter: grayscale(0.5) drop-shadow(0.5em 0.5em 4px rgba(150,150,150,30))}
+button.new-button img          {height: 2vw;
+    margin-right: 0.5em}
+
+
+/*Pour un bouton sans contenu autre qu'une image, l'appliquer à la balise img du bouton.*/
+img.new-button-img {       filter: grayscale(0.8) opacity(0.6);
+    width:100%;
+}
+
+img.new-button-img:hover {filter: grayscale(0.5) drop-shadow(0.5em 0.5em 4px rgba(150,150,150,30))}
+
+img.new-button-img {
+    z-index: 0;
+}
+
+
+/*Onglets*/
+
+.onglet {
+    flex: 1;
+    border: 1px solid #ccc;
+    background-color: darkgrey;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+    padding: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.onglet:hover {
+    text-shadow: 1px 1px 4px black ;
+    filter: grayscale(0.5) drop-shadow(0.5em 0.5em 4px rgba(150,150,150,30))
+}
+
+/*Bouton modifier le style*/
+
+.modify-button {
+    background-color: #4CAF50; /* Couleur de fond verte */
+    color: white; /* Couleur du texte, blanche */
+    padding: 10px 10px; /* Espacement interne du bouton (verticale et horizontale) */
+    border: none; /* Suppression de la bordure par défaut */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur style "main" au survol */
+    font-size: 16px; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    transition: background-color 0.3s ease; /* Animation pour le changement de couleur */
+}
+
+/* Effet au survol */
+.modify-button:hover {
+    background-color: #45a049; /* Couleur légèrement plus foncée */
+}
+
+/* Effet en cas de clic */
+.modify-button:active {
+    background-color: #3e8e41; /* Couleur encore plus foncée */
+    transform: scale(0.98); /* Légère réduction de taille pour un effet de clic visuel */
+}
+
+
+/*Le style de nouveau projet*/
+
+/* Général pour le modal */
+ .modal-container {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 1000;
+ }
+
+.modal-container .modal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.modal-container .modal h2 {
+    margin-bottom: 20px;
+}
+
+.modal-container .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.modal-container .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-container .form-group input,
+.modal-container .form-group textarea {
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-container textarea {
+    resize: none;
+}
+
+.modal-container .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-container button:hover {
+    opacity: 0.8;
+}
+
+.modal-container button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.modal-container button[type="button"] {
+    background-color: #f44336;
+    color: #fff;
+}

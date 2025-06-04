@@ -1,0 +1,45 @@
+
+
+.profile-content {
+    padding: 1% 4%; /*paramètres padding si 2 valeurs : haut&bas | côtés */
+}
+
+
+
+
+
+.group-button {
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    text-wrap: nowrap;
+    background: rgba(91, 98, 170, 0.30);
+    justify-content: center;
+    align-items: center;
+}
+
+.group-button:hover {
+    background: rgba(91, 98, 170, 0.80);
+}
+.group-button:hover::after{
+    content:'  x';
+    margin-left: 5px;
+}
+
+.add-group-button {
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    text-wrap: nowrap;
+    background: rgba(91, 98, 170, 0.30);
+    justify-content: center;
+    align-items: center;
+}
+
+.add-group-button:hover {
+    background: rgba(91, 98, 170, 0.80);
+}
+.add-group-button:hover::after{
+    content:'  +';
+}
+

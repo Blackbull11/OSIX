@@ -1,0 +1,25 @@
+/*Style du visuel des ptojets EPIX sur la page d'accueil*/
+
+.EPIX-project          {display: flex;
+    align-items: center;
+    padding: 0.5em;
+    color: #000;
+    text-decoration: none       }
+
+.EPIX-project img      {height: 6.3vw;
+    width: 8.4vw;
+    border-radius: 5px;
+    filter: drop-shadow(4px 4px 1px rgba(0,0,0,0.25))}
+
+.EPIX-project:hover    {font-style: italic;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 4px;
+    text-decoration: underline  }
+
+.EPIX-project-text     {padding-left: 2vw           }
+
+.EPIX-project-title    {font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 0.5em}
+
+.EPIX-project-date     {font-size: 10px;    }

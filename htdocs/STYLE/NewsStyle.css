@@ -1,0 +1,201 @@
+.tab-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab-button.active {
+    background-color: #0078D7;
+    color: white;
+    border-color: #0078D7;
+}
+
+.tab-content {
+    padding: 20px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+.tab-content.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.recentFeed .news-item {
+    margin-top: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+button.collapsible-news {
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    border-radius: 0;
+    background-color: white;
+}
+button.collapsible-news:before {
+    content: '>';
+    margin-right: 10px;
+}
+button.collapsible-news:focus {
+    outline: none;
+}
+button.collapsible-news.active:before {
+    content: '\002335';
+}
+
+.collapsible-news-content {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+/* Style de la modal */
+.mailModal {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4); /* Fond semi-transparent */
+    padding-top: 60px;
+}
+
+.mailModal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#userSelectedRecipients, #groupSelectedRecipients {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.recipient-tag {
+    background: rgba(91, 98, 170, 0.30);
+    color: #000000;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.recipient-tag:hover {
+    background: rgba(91, 98, 170, 0.80);
+}
+
+.recipient-tag button {
+    background-color: transparent;
+    border: none;
+    color: #000000;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0;
+}
+
+.recipient-tag button:hover {
+    color: #ffaeae; /* Couleur au survol */
+}
+
+#recipientSelect {
+    display: flex;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    justify-content: space-between;
+}
+
+.recipientSelect label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: 23%;
+}
+
+.recipientSelect select {
+    padding: 8px;
+    margin-bottom: 15px; /* Espacement entre les sélecteurs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 23%;
+
+}
+
+.recipientSelect select:focus {
+    border-color: #ffffff; /* Change la couleur de la bordure au focus */
+    outline: none; /* Supprime le contour par défaut */
+}
+
+/* Style for the label */
+label[for="message"] {
+    display: block;
+    margin: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Style for the text area */
+#message {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+    resize: vertical;
+}
+
+.messaging {
+    overflow: auto;
+    max-height: 500px;
+}

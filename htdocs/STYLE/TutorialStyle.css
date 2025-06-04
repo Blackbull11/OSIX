@@ -1,0 +1,273 @@
+
+/* Superposition foncée */
+.tutorial-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none; /* Masqué par défaut */
+}
+
+/* Popup centrale */
+.tutorial-popup {
+    display: none;
+    position: absolute;
+    background-color: #fff; /* Couleur du fond */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 1001;
+}
+
+.tutorial-popup .tutorial-popup-content {
+    max-width: 30vw; /* Restreindre la largeur à 30% de la largeur de l'écran */
+    overflow-wrap: break-word; /* Gérer les longs messages */
+    text-align: left;
+}
+
+.tutorial-popup .tutorial-popup-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #fff; /* Triangle pointant vers la droite */
+    top: 5px;  /* Positionner le triangle en haut du popup */
+    left: -8px;  /* Ajuster la position horizontale */
+}
+
+.tutorial-popup[data-position="left"] .tutorial-popup-triangle {
+    border-right: none;
+    border-left: 10px solid #fff; /* Triangle pointant vers la gauche */
+    left: auto;
+    right: -10px; /* Placer le triangle à droite du popup */
+}
+/* Style pour le bouton "Quitter" */
+.quit-tutorial-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+}
+.previous-button {
+    padding: 10px;
+    background-color: #ff8787;
+    color: white;
+    border-right: outset white;
+    border-bottom: outset white;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+}
+.next-button {
+    padding: 10px;
+    background-color: #4e94ff;
+    color: white;
+    border-left: outset #a2a2a2;
+    border-bottom: outset white;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+}
+.skip-button {
+    padding: 10px;
+    background-color: rgb(0, 0, 0, 0.3);
+    font-size: larger;
+    border: none;
+    font-family: 'math';
+    text-transform: uppercase;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.79);
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.popup-header h2 {
+    margin: 0;
+}
+
+.popup-body {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.popup-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.popup-footer button {
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 4px;
+    width: 50%;
+    cursor: pointer;
+    margin-top: 4em;
+}
+.popup-footer button:hover {
+    background: #ff00003d;
+}
+
+.close-popup {
+    font-size: 20px;
+    cursor: pointer;
+    color: #444;
+    font-weight: bold;
+}
+
+/* Menu du tutoriel */
+.tutorial-menu {
+    padding : 20px;
+    display: none;
+    z-index: 1000;
+    width : 25vw;
+    background-color: #ffffff;
+    border-left: 1px solid #ddd;
+    height: 100vh;
+    font-family: 'math', sans-serif;
+    overflow-y: auto;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    right: 0;
+    top: 0; /* Fixe le menu en haut lorsqu'on défile */
+    horiz-align: left;
+}
+.tutorial-menu ul li a, .tutorial-menu a {
+    color: black;
+    text-decoration: none;
+    font-family: 'math'
+}
+.tutorial-menu ul li a {
+    color: rgb(91, 91, 91);
+}
+.tutorial-step-active a {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* Section du menu */
+.tutorial-section {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: left;
+}
+
+/* Étape active dans le menu */
+.tutorial-step {
+    font-size: 0.95rem;
+    margin-left: 15px; /* Tabulation pour les sous-étapes */
+    cursor: pointer;
+    color: #666; /* Couleur de police plus grise par défaut */
+}
+
+.tutorial-step:hover {
+    color: #333; /* Couleur plus foncée au survol */
+}
+
+.tutorial-step-active {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+    margin-left: 10px;
+}
+
+/* Bouton flottant */
+.tutorial-toggle-btn {
+    position: fixed;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #ff8787;
+    color: white;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: background-color 0.3s ease;
+}
+.tutorial-toggle-btn:hover {
+    background-color: #ff4d4d;
+}
+
+/* Liseret visuel */
+.tutorial-liseret {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #ff8787;
+    z-index: 1000;
+}
+
+/* Menu tutoriel (slide-in) */
+.tutorial-menu {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Cache le menu à l'extérieur de la vue */
+    width: 350px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    padding: 20px;
+    z-index: 1002;
+    transition: right 0.3s ease;
+}
+.tutorial-menu.tutorial-menu-open {
+    right: 0; /* Slide visible sur le clic du bouton */
+}
+
+/* Contenus du menu */
+.tutorial-section {
+    margin-bottom: 20px;
+}
+
+.tutorial-step {
+    margin: 10px 0;
+}
+.tutorial-step a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+.tutorial-step a:hover {
+    text-decoration: underline;
+}
+
+/* Bouton de fermeture dans le menu */
+.tutorial-menu .close-menu-btn {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff4d4d;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-bottom: 20px;
+    text-align: left;
+    padding: 0;
+}
